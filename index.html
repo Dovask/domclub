@@ -1,38 +1,79 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My BTC Machine Inspired Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
 
-{% for post in paginator.posts %}
-<div>
-  <small class="post-info">{{ post.date | date: "%B %-d, %Y" }}</small>
-  <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
-  <small class="post-info">by {{ post.author | default: site.author }}</small>
-  {{ post.excerpt }}
-  <a href="{{ post.url | relative_url }}">[ Read ]</a>
-</div>
-<br />
-{% endfor %}
+        header {
+            background-color: #20232a;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
 
-<ul class="pagination">
-  <li>
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | relative_url }}">
-      <span class="previous"></span>
-    </a>
-    {% else %}
-    <span class="previous"></span>
-    {% endif %}
-  </li>
-  <li>
-    <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-  </li>
-  <li>
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}">
-      <span class="next"></span>
-    </a>
-    {% else %}
-    <span class="next"></span>
-    {% endif %}
-  </li>
-</ul>
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #20232a;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to My Site</h1>
+        <p>This is a simple template inspired by BTC Machine's website. Customize it according to your needs!</p>
+
+        <h2>Another Heading</h2>
+        <p>More content can be added here.</p>
+    </div>
+
+    <footer>
+        © 2023 by My Name. All rights reserved.
+    </footer>
+</body>
+</html>
